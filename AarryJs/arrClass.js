@@ -135,6 +135,7 @@ class MyArr {
 		if (this.size === this.data.length / 4 && this.data.length / 2 > 1) {
 			this.resize(this.data.length / 2);
 		}
+		// 移除的element
 		return ret;
 	}
 	removeFirst() {
@@ -179,18 +180,28 @@ class MyArr {
 		}
 		this.data = newData;
 	}
+	
+	getLast() {
+		return this.get(this.size - 1);
+	}
+	
+	getFirst() {
+		return this.get(0);
+	}
 }
+
+exports.MyArr = MyArr;
 
 const myArr = new MyArr({capacity: 3});
 
-myArr.addFirst(1);
-myArr.addLast('last1');
-myArr.add(2, 'last2');
-myArr.addLast('last3');
-console.log(myArr.toString());
-myArr.removeLast();
+// myArr.addFirst(1);
+// myArr.addLast('last1');
+// myArr.add(2, 'last2');
+// myArr.addLast('last3');
+// console.log(myArr.toString());
+// myArr.removeLast();
 // myArr.removeElement('last1');
-console.log(myArr.toString());
+// console.log(myArr.toString());
 
 /*
 * conclusion
